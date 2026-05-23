@@ -38,9 +38,11 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-body);
+  width: 100%;
 }
 
 body {
+  width: 100%;
   background-color: #FAF6EE;
   color: #2A1F18;
   font-family: var(--font-body);

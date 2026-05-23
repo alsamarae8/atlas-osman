@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, MapPin } from "lucide-react";
 
 const navLinks = [
@@ -82,8 +83,18 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
+        {/* CTAs */}
         <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/login"
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+              scrolled
+                ? "text-[#7A6355] hover:text-[#2A1F18]"
+                : "text-white/70 hover:text-white"
+            }`}
+          >
+            Sign In
+          </Link>
           <button
             onClick={() => handleNav("#contact")}
             className="px-5 py-2 rounded-full text-sm font-semibold bg-[#C46B43] hover:bg-[#A8502A] text-white transition-all duration-200 shadow-md shadow-[#C46B43]/25 hover:shadow-[#C46B43]/40 hover:-translate-y-0.5 active:translate-y-0"
@@ -123,7 +134,14 @@ export default function Navbar() {
               </button>
             </li>
           ))}
-          <li className="pt-2">
+          <li className="pt-2 flex flex-col gap-2">
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="w-full px-5 py-2.5 rounded-full text-sm font-medium text-center border border-[#E8DDD0] text-[#7A6355] hover:text-[#2A1F18] transition-colors"
+            >
+              Sign In
+            </Link>
             <button
               onClick={() => handleNav("#contact")}
               className="w-full px-5 py-2.5 rounded-full text-sm font-semibold bg-[#C46B43] hover:bg-[#A8502A] text-white transition-colors"

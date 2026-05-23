@@ -72,14 +72,14 @@ const features = [
 ];
 
 const tagColors: Record<string, string> = {
-  "Field Ops": "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  Reporting: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  Distribution: "bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20",
-  "Legal & Admin": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  "Data Quality": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
-  "M&E": "bg-rose-500/10 text-rose-400 border-rose-500/20",
-  Finance: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
-  Collaboration: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+  "Field Ops": "bg-[#4A7FA5]/10 text-[#4A7FA5] border-[#4A7FA5]/20",
+  Reporting: "bg-[#7B5EA7]/10 text-[#7B5EA7] border-[#7B5EA7]/20",
+  Distribution: "bg-[#C46B43]/10 text-[#C46B43] border-[#C46B43]/20",
+  "Legal & Admin": "bg-[#3B6B4A]/10 text-[#3B6B4A] border-[#3B6B4A]/20",
+  "Data Quality": "bg-[#D4A853]/10 text-[#A87B20] border-[#D4A853]/25",
+  "M&E": "bg-[#B85450]/10 text-[#B85450] border-[#B85450]/20",
+  Finance: "bg-[#3B8080]/10 text-[#3B8080] border-[#3B8080]/20",
+  Collaboration: "bg-[#5B6BA5]/10 text-[#5B6BA5] border-[#5B6BA5]/20",
 };
 
 function FeatureCard({
@@ -115,23 +115,20 @@ function FeatureCard({
   return (
     <div
       ref={ref}
-      className={`group relative rounded-2xl border border-[#1e3a5f]/60 bg-[#0a1628]/80 p-6 transition-all duration-500 hover:border-[#f97316]/30 hover:bg-[#0d1f36] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#f97316]/5 ${
+      className={`group relative rounded-2xl border border-[#E8DDD0] bg-white p-6 transition-all duration-500 hover:border-[#C46B43]/30 hover:shadow-lg hover:shadow-[#C46B43]/5 hover:-translate-y-1 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
     >
-      {/* Subtle gradient on hover */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f97316]/0 to-[#f97316]/0 group-hover:from-[#f97316]/[0.03] group-hover:to-transparent transition-all duration-500" />
-
       <div className="relative">
         {/* Icon */}
-        <div className="w-11 h-11 rounded-xl bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center mb-4 group-hover:bg-[#f97316]/15 transition-colors">
-          <Icon size={20} className="text-[#f97316]" strokeWidth={1.8} />
+        <div className="w-11 h-11 rounded-xl bg-[#C46B43]/10 border border-[#C46B43]/20 flex items-center justify-center mb-4 group-hover:bg-[#C46B43]/15 transition-colors">
+          <Icon size={20} className="text-[#C46B43]" strokeWidth={1.8} />
         </div>
 
         {/* Tag */}
         <span
           className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded border mb-3 ${
-            tagColors[tag] ?? "bg-slate-500/10 text-slate-400 border-slate-500/20"
+            tagColors[tag] ?? "bg-[#9A8878]/10 text-[#9A8878] border-[#9A8878]/20"
           }`}
         >
           {tag}
@@ -139,14 +136,14 @@ function FeatureCard({
 
         {/* Title */}
         <h3
-          className="text-lg font-semibold text-white mb-2"
-          style={{ fontFamily: "var(--font-sora)" }}
+          className="text-lg font-semibold text-[#2A1F18] mb-2"
+          style={{ fontFamily: "var(--font-playfair)" }}
         >
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-slate-400 leading-relaxed">{description}</p>
+        <p className="text-sm text-[#7A6355] leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -154,21 +151,21 @@ function FeatureCard({
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 md:py-32 bg-[#050d1a]">
+    <section id="features" className="py-24 md:py-32 bg-[#FAF6EE]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-xs font-semibold tracking-widest uppercase mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C46B43]/10 border border-[#C46B43]/20 text-[#C46B43] text-xs font-semibold tracking-widest uppercase mb-5">
             Platform Features
           </div>
           <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-sora)" }}
+            className="text-4xl md:text-5xl font-bold text-[#2A1F18] mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
           >
             Everything your team needs,{" "}
-            <span className="text-[#f97316]">in one platform</span>
+            <span className="text-[#C46B43]">in one platform</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#7A6355] text-lg max-w-2xl mx-auto leading-relaxed">
             From daily field activities to donor reporting — ATLAS consolidates
             your entire MEAL workflow into a single, cohesive system.
           </p>

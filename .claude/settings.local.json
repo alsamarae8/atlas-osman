@@ -16,7 +16,9 @@
       "Read(//c/Users/alsam/AppData/Local/ms-playwright/**)",
       "Read(//c/Users/alsam/AppData/Roaming/**)",
       "Bash(npx --yes playwright@1.60.0 --version)",
-      "PowerShell($tmpDir = \"$env:TEMP\\\\playwright-test\"; New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null; Set-Location $tmpDir; npm init -y 2>&1 | Out-Null; npm install playwright@1.60.0 2>&1 | Select-Object -Last 3; Write-Host \"Done: $tmpDir\")"
+      "PowerShell($tmpDir = \"$env:TEMP\\\\playwright-test\"; New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null; Set-Location $tmpDir; npm init -y 2>&1 | Out-Null; npm install playwright@1.60.0 2>&1 | Select-Object -Last 3; Write-Host \"Done: $tmpDir\")",
+      "Bash(npm install *)",
+      "Bash(node -e \"const s = require\\('C:/Users/alsam/atlas-osman/node_modules/@supabase/ssr'\\); console.log\\(Object.keys\\(s\\)\\)\")"
     ]
   }
 }

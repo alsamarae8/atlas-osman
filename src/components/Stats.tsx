@@ -41,40 +41,32 @@ function StatCard({
   return (
     <div
       ref={ref}
-      className={`flex flex-col items-center text-center px-6 py-6 transition-all duration-700 ${
+      className={`flex flex-col items-center text-center px-6 py-8 transition-all duration-700 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
       <div
-        className="text-4xl md:text-5xl font-bold text-[#f97316] mb-1 tabular-nums"
-        style={{ fontFamily: "var(--font-sora)" }}
+        className="text-4xl md:text-5xl font-bold text-[#C46B43] mb-1 tabular-nums"
+        style={{ fontFamily: "var(--font-playfair)" }}
       >
         {value}
       </div>
-      <div className="text-white font-semibold text-sm md:text-base mb-0.5">
+      <div className="text-[#2A1F18] font-semibold text-sm md:text-base mb-0.5">
         {label}
       </div>
-      <div className="text-slate-500 text-xs md:text-sm">{description}</div>
+      <div className="text-[#9A8878] text-xs md:text-sm">{description}</div>
     </div>
   );
 }
 
 export default function Stats() {
   return (
-    <section
-      id="stats"
-      className="relative py-0 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #050d1a 0%, #0a1628 50%, #050d1a 100%)",
-      }}
-    >
+    <section id="stats" className="relative py-0 overflow-hidden bg-[#FAF6EE]">
       {/* Top divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#1e3a5f] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#E8DDD0] to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-[#1e3a5f]/50">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-x divide-[#E8DDD0]">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} {...stat} delay={i * 100} />
           ))}
@@ -82,7 +74,7 @@ export default function Stats() {
       </div>
 
       {/* Bottom divider */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#1e3a5f] to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#E8DDD0] to-transparent" />
     </section>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Globe, ArrowUpRight } from "lucide-react";
+import { Mail, Globe, ArrowUpRight, MapPin } from "lucide-react";
 
 const links = {
   Platform: [
@@ -27,27 +27,33 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-[#030a15] border-t border-[#1e3a5f]/40">
+    <footer className="bg-[#1F1814] border-t border-[#2E201A]">
       {/* Contact CTA */}
-      <div className="border-b border-[#1e3a5f]/40">
+      <div className="border-b border-[#2E201A]">
         <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2
               className="text-3xl md:text-4xl font-bold text-white mb-3"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-playfair)" }}
             >
               Ready to transform your{" "}
-              <span className="text-[#f97316]">operations?</span>
+              <span className="text-[#C46B43]">operations?</span>
             </h2>
-            <p className="text-slate-400 text-lg max-w-xl">
+            <p className="text-[#7A6355] text-lg max-w-xl">
               Join MEAL teams that have modernized their field-to-donor
               reporting pipeline with ATLAS.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <a
-              href="mailto:info@osmanconsulting.com"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#f97316] hover:bg-[#ea6c08] text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:-translate-y-0.5"
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C46B43] hover:bg-[#A8502A] text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-[#C46B43]/20 hover:shadow-[#C46B43]/35 hover:-translate-y-0.5"
             >
               <Mail size={16} />
               Get in Touch
@@ -60,7 +66,7 @@ export default function Footer() {
                   .getElementById("features")
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#1e3a5f] hover:border-[#f97316]/40 text-slate-300 hover:text-white font-semibold text-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#3E2E24] hover:border-[#C46B43]/40 text-[#9A8878] hover:text-white font-semibold text-sm transition-all duration-200"
             >
               Explore Platform
               <ArrowUpRight size={14} />
@@ -74,32 +80,36 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <span
-                className="text-2xl font-bold tracking-tight"
-                style={{ fontFamily: "var(--font-sora)" }}
-              >
-                <span className="text-white">ATL</span>
-                <span className="text-[#f97316]">AS</span>
-              </span>
-              <p className="text-xs text-slate-500 font-medium tracking-widest uppercase mt-0.5">
-                by Osman Consulting
-              </p>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#C46B43] to-[#A8502A] flex items-center justify-center">
+                <MapPin size={13} className="text-white" strokeWidth={2.5} />
+              </div>
+              <div>
+                <span
+                  className="text-xl font-bold text-white tracking-tight"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  ATLAS
+                </span>
+                <p className="text-[9px] text-[#4A3728] font-medium tracking-widest uppercase -mt-0.5">
+                  by Osman Consulting
+                </p>
+              </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+            <p className="text-[#7A6355] text-sm leading-relaxed mb-5">
               Built for MEAL teams. Trusted for donor reporting.
             </p>
-            <div className="flex flex-col gap-2 text-sm text-slate-500">
+            <div className="flex flex-col gap-2 text-sm text-[#4A3728]">
               <a
                 href="mailto:info@osmanconsulting.com"
-                className="inline-flex items-center gap-2 hover:text-[#f97316] transition-colors"
+                className="inline-flex items-center gap-2 hover:text-[#C46B43] transition-colors"
               >
                 <Mail size={13} />
                 info@osmanconsulting.com
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 hover:text-[#f97316] transition-colors"
+                className="inline-flex items-center gap-2 hover:text-[#C46B43] transition-colors"
               >
                 <Globe size={13} />
                 osmanconsulting.com
@@ -110,7 +120,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(links).map(([category, items]) => (
             <div key={category}>
-              <h4 className="text-white font-semibold text-sm mb-4 tracking-wide">
+              <h4 className="text-[#E8DDD0] font-semibold text-sm mb-4 tracking-wide">
                 {category}
               </h4>
               <ul className="space-y-2.5">
@@ -123,7 +133,7 @@ export default function Footer() {
                         const el = document.querySelector(item.href);
                         el?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="text-slate-500 hover:text-[#f97316] text-sm transition-colors duration-200"
+                      className="text-[#4A3728] hover:text-[#C46B43] text-sm transition-colors duration-200"
                     >
                       {item.label}
                     </a>
@@ -135,10 +145,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-[#1e3a5f]/40 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-600">
+        <div className="border-t border-[#2E201A] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[#4A3728]">
           <p>© {currentYear} Osman Consulting. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f97316]/60" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C46B43]/60" />
             Built for MEAL teams. Trusted for donor reporting.
           </p>
         </div>

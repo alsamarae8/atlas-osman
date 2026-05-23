@@ -1,20 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #050d1a;
-  --color-navy-light: #0a1628;
-  --color-navy-mid: #0f2040;
-  --color-blue-deep: #1e3a5f;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea6c08;
-  --color-accent-light: #fed7aa;
-  --color-gold: #f59e0b;
-  --color-muted: #64748b;
-  --color-surface: #0d1f36;
-  --color-border: #1e3a5f;
+  /* Warm-earth palette */
+  --color-cream: #FAF6EE;
+  --color-cream-dark: #F2EBD9;
+  --color-card: #FFFFFF;
+  --color-sidebar: #1F1814;
+  --color-sidebar-hover: #2E201A;
+  --color-terracotta: #C46B43;
+  --color-terracotta-light: #D4845E;
+  --color-terracotta-dark: #A8502A;
+  --color-ink: #2A1F18;
+  --color-ink-mid: #4A3728;
+  --color-ink-light: #7A6355;
+  --color-ochre: #D4A853;
+  --color-ochre-light: #E8C170;
+  --color-forest: #3B6B4A;
+  --color-forest-light: #4E8A60;
+  --color-sky: #4A7FA5;
+  --color-sky-light: #6299BC;
+  --color-border: #E8DDD0;
+  --color-border-dark: #D4C8B8;
+  --color-muted: #9A8878;
 
-  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  /* Typography */
+  --font-heading: var(--font-playfair), "Palatino Linotype", Georgia, serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-var), "Fira Code", "Cascadia Code", monospace;
 }
 
 * {
@@ -29,8 +41,8 @@ html {
 }
 
 body {
-  background-color: #050d1a;
-  color: #f1f5f9;
+  background-color: #FAF6EE;
+  color: #2A1F18;
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -47,8 +59,8 @@ h6 {
 }
 
 ::selection {
-  background: #f97316;
-  color: #ffffff;
+  background: #C46B43;
+  color: #FAF6EE;
 }
 
 ::-webkit-scrollbar {
@@ -56,14 +68,14 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a1628;
+  background: #F2EBD9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f97316;
+  background: #C46B43;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea6c08;
+  background: #A8502A;
 }

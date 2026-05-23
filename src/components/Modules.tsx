@@ -19,8 +19,8 @@ const modules = [
       "PDF export with ATLAS branding and watermarks",
       "Offline-compatible data collection sync",
     ],
-    accent: "#f97316",
     badge: "Reporting",
+    color: "#4A7FA5",
   },
   {
     icon: Ticket,
@@ -37,8 +37,8 @@ const modules = [
       "Offline redemption with sync-on-connect",
       "Beneficiary consent and signature capture",
     ],
-    accent: "#f97316",
     badge: "Distribution",
+    color: "#C46B43",
   },
   {
     icon: Users,
@@ -55,8 +55,8 @@ const modules = [
       "Biometric-ready integration framework",
       "GDPR-aligned data retention controls",
     ],
-    accent: "#f97316",
     badge: "Data Quality",
+    color: "#3B6B4A",
   },
 ];
 
@@ -81,7 +81,7 @@ function ModuleCard({
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -98,42 +98,67 @@ function ModuleCard({
     >
       {/* Visual panel */}
       <div className="w-full lg:w-1/2">
-        <div className="relative rounded-2xl border border-[#1e3a5f]/60 bg-gradient-to-br from-[#0a1628] to-[#050d1a] p-8 overflow-hidden">
+        <div
+          className="relative rounded-2xl border bg-gradient-to-br p-8 overflow-hidden"
+          style={{
+            borderColor: `${module.color}25`,
+            background: `linear-gradient(135deg, ${module.color}08 0%, #FAF6EE 100%)`,
+          }}
+        >
           {/* Background glow */}
           <div
             className="absolute top-0 right-0 w-48 h-48 rounded-full pointer-events-none"
             style={{
-              background: `radial-gradient(circle, ${module.accent}15 0%, transparent 70%)`,
+              background: `radial-gradient(circle, ${module.color}18 0%, transparent 70%)`,
               filter: "blur(40px)",
             }}
           />
 
           {/* Module number */}
-          <div className="text-8xl font-bold text-[#f97316]/5 absolute bottom-4 right-6 select-none pointer-events-none" style={{ fontFamily: "var(--font-sora)" }}>
+          <div
+            className="text-8xl font-bold absolute bottom-4 right-6 select-none pointer-events-none"
+            style={{
+              color: `${module.color}08`,
+              fontFamily: "var(--font-playfair)",
+            }}
+          >
             0{index + 1}
           </div>
 
           {/* Icon */}
-          <div className="relative w-14 h-14 rounded-2xl bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center mb-6">
-            <Icon size={26} className="text-[#f97316]" strokeWidth={1.6} />
+          <div
+            className="relative w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border"
+            style={{
+              background: `${module.color}12`,
+              borderColor: `${module.color}25`,
+            }}
+          >
+            <Icon size={26} style={{ color: module.color }} strokeWidth={1.6} />
           </div>
 
           {/* Badge */}
-          <span className="inline-block text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded border bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20 mb-4">
+          <span
+            className="inline-block text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded border mb-4"
+            style={{
+              background: `${module.color}10`,
+              color: module.color,
+              borderColor: `${module.color}25`,
+            }}
+          >
             {module.badge}
           </span>
 
           {/* Title */}
           <h3
-            className="text-2xl md:text-3xl font-bold text-white mb-2 relative"
-            style={{ fontFamily: "var(--font-sora)" }}
+            className="text-2xl md:text-3xl font-bold text-[#2A1F18] mb-2 relative"
+            style={{ fontFamily: "var(--font-playfair)" }}
           >
             {module.title}
           </h3>
-          <p className="text-[#f97316] font-medium text-sm mb-4">
+          <p className="font-medium text-sm mb-4" style={{ color: module.color }}>
             {module.subtitle}
           </p>
-          <p className="text-slate-400 text-sm leading-relaxed relative">
+          <p className="text-[#7A6355] text-sm leading-relaxed relative">
             {module.description}
           </p>
         </div>
@@ -142,10 +167,13 @@ function ModuleCard({
       {/* Feature list panel */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center">
         <div className="mb-6">
-          <p className="text-slate-500 text-xs font-semibold uppercase tracking-widest mb-1">
+          <p className="text-[#9A8878] text-xs font-semibold uppercase tracking-widest mb-1">
             What&apos;s included
           </p>
-          <div className="h-px w-12 bg-[#f97316]/40" />
+          <div
+            className="h-px w-12"
+            style={{ background: `${module.color}50` }}
+          />
         </div>
 
         <ul className="space-y-3.5">
@@ -159,10 +187,20 @@ function ModuleCard({
               }`}
               style={{ transitionDelay: `${200 + i * 60}ms` }}
             >
-              <div className="mt-0.5 w-5 h-5 rounded-full bg-[#f97316]/10 border border-[#f97316]/30 flex items-center justify-center flex-shrink-0">
-                <Check size={11} className="text-[#f97316]" strokeWidth={3} />
+              <div
+                className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 border"
+                style={{
+                  background: `${module.color}12`,
+                  borderColor: `${module.color}30`,
+                }}
+              >
+                <Check
+                  size={11}
+                  style={{ color: module.color }}
+                  strokeWidth={3}
+                />
               </div>
-              <span className="text-slate-300 text-sm leading-relaxed">
+              <span className="text-[#4A3728] text-sm leading-relaxed">
                 {feat}
               </span>
             </li>
@@ -175,21 +213,21 @@ function ModuleCard({
 
 export default function Modules() {
   return (
-    <section id="modules" className="py-24 md:py-32 bg-[#050d1a]">
+    <section id="modules" className="py-24 md:py-32 bg-[#F2EBD9]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-xs font-semibold tracking-widest uppercase mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C46B43]/10 border border-[#C46B43]/20 text-[#C46B43] text-xs font-semibold tracking-widest uppercase mb-5">
             Core Modules
           </div>
           <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-            style={{ fontFamily: "var(--font-sora)" }}
+            className="text-4xl md:text-5xl font-bold text-[#2A1F18] mb-4"
+            style={{ fontFamily: "var(--font-playfair)" }}
           >
             Deep-dive into what{" "}
-            <span className="text-[#f97316]">ATLAS delivers</span>
+            <span className="text-[#C46B43]">ATLAS delivers</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#7A6355] text-lg max-w-2xl mx-auto leading-relaxed">
             Our three flagship modules power the most demanding aspects of NGO
             operations — with precision built for field realities.
           </p>

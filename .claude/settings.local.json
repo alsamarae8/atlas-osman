@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const lr = require\\('c:/Users/alsam/atlas-osman/node_modules/lucide-react'\\); console.log\\(Object.keys\\(lr\\).slice\\(0,30\\).join\\(', '\\)\\)\")",
+      "Bash(node -e \"const fonts = require\\('c:/Users/alsam/atlas-osman/node_modules/next/dist/compiled/@next/font/dist/google/index.js'\\); console.log\\(typeof fonts.Sora, typeof fonts.Inter\\)\")",
+      "Bash(node -e \"const g = require\\('c:/Users/alsam/atlas-osman/node_modules/next/dist/compiled/@next/font/dist/google/index.js'\\); console.log\\(Object.keys\\(g\\).filter\\(k => k === 'Sora' || k === 'Inter'\\)\\)\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\); console.log\\(Object.keys\\(d\\).filter\\(k=>k.startsWith\\('S'\\)||k==='Inter'\\).join\\(', '\\)\\)\")",
+      "Bash(npm run *)",
+      "Bash(git -C \"c:/Users/alsam/atlas-osman\" diff HEAD --stat)",
+      "Bash(git -C \"c:/Users/alsam/atlas-osman\" status --short)",
+      "Bash(where playwright *)",
+      "Bash(npx playwright *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(node -e ' *)",
+      "Bash(npm list *)",
+      "Read(//c/Users/alsam/AppData/Local/ms-playwright/**)",
+      "Read(//c/Users/alsam/AppData/Roaming/**)",
+      "Bash(npx --yes playwright@1.60.0 --version)",
+      "PowerShell($tmpDir = \"$env:TEMP\\\\playwright-test\"; New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null; Set-Location $tmpDir; npm init -y 2>&1 | Out-Null; npm install playwright@1.60.0 2>&1 | Select-Object -Last 3; Write-Host \"Done: $tmpDir\")"
+    ]
+  }
+}
